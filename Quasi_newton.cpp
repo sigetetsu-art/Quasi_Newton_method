@@ -68,7 +68,7 @@ inline auto Bupdate(vector<vector<double>> &B, vector<vector<double>> s, vector<
     vector<vector<double>> st_y = calc_matrix_product(st, dgrad); //Bの更新式の右辺第三項の分母を計算
     vector<vector<double>> y_yt = calc_matrix_product(dgrad, dgradt); //Bの更新式の右辺第三項の分子を計算
     if(fabs(st_y.at(0).at(0)) < 0.00001){
-        st_B_s.at(0).at(0) = 0.00001;
+        st_y.at(0).at(0) = 0.00001;
     }
     vector<vector<double>> third_term = matrix_times_const(1 / st_y.at(0).at(0), y_yt); //third term(右辺第三項)の結果を計算
 
